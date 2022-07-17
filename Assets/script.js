@@ -1,0 +1,1 @@
+var APIWeather = "85908a6f179294682198f458c3bfa8f3";
