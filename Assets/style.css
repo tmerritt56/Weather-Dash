@@ -1,4 +1,44 @@
+#infosection {
+    padding-top: 20px;
+}
+#weatherdata {
+    background-color: purple;
+}
+.current-city-data {
+    min-height: 300px;
+}
+.table-box {
+    background-color: aquamarine;
+}
+tr {
+    margin: 8px;
+}
+.card {
+    background-color: darkorchid;
+    margin: 3px;
+    min-height: 300px;
+}
 .hero {
-    background-color: aqua;
-    color: black;
+    background:-webkit-linear-gradient(
+        to right,
+        rgb(255, 0, 157)
+        rgb(255, 177, 220)
+    );
+}
+.titlehero {
+    color: #fff;
+}
+#submit {
+    width:100%;
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 599px) {
+    .column {
+        margin: 4px;
+        padding: 0 25px;
+    }
+    .card-content {
+        padding: 25px;
+    }
 }
