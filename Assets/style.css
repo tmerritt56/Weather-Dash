@@ -4,17 +4,9 @@ body {
             linear-gradient(127deg, rgba(225, 0, 255, 0.8), rgba(0,255,0,0) 70.71%),
             linear-gradient(336deg, rgba(2, 255, 255, 0.74), rgba(0,0,255,0) 70.71%);
 }
-#infosection {
-    padding-top: 20px;
-}
-#cityinput{
-    width: auto;
-}
-#weatherdata {
-    background: transparent;
-}
-.current-city-data {
-    min-height: 300px;
+footer {
+    text-align: center;
+    margin: 20px;
 }
 .table-box {
     background: transparent;
@@ -25,7 +17,6 @@ tr {
 .card {
     background: transparent;
     margin: 3px;
-    min-height: 300px;
 }
 .hero {
     background: transparent;
@@ -36,30 +27,16 @@ tr {
     text-align: center;
     font-size: 50px;
 }
+
 #submit {
     width:100%;
-    margin-bottom: 25px;
 }
-footer {
-    text-align: center;
+#infosection {
+    padding-top: 20px;
 }
-
-@media (max-width: 500px) {
-    .column {
-        margin: 4px;
-        padding: 0 25px;
-    }
-    .card-content {
-        padding: 25px;
-    }
+#cityinput{
+    width: auto;
 }
-
-@media (max-width: 690px) {
-    .column {
-        margin: 4px;
-        padding: 0 25px;
-    }
-    .card-content {
-        padding: 25px;
-    }
+#weatherdata {
+    background: transparent;
 }
