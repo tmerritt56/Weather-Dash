@@ -9,5 +9,5 @@
 
 #### ScreenShot 
 
-![screenshot](./Assets/updated screenshot.PNG)
+![screenshot](./Assets/updatedscreenshot.PNG)
 
