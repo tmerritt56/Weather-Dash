@@ -1,5 +1,3 @@
-'use strict';
-
 $(document).ready(function() {
 
     let NowMoment = moment().format("MM-DD-YYYY, hh:mm");
