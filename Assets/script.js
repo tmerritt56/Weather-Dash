@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
-    let NowMoment = moment().format("MM-DD-YYYY, hh:mm");
+    var NowMoment = moment().format("MM-DD-YYYY, hh:mm");
 
-    let dayOne= moment().add(1, "days").format("MM-DD-YYYY, hh:mm");
-    let dayTwo = moment().add(2, "days").format("MM-DD-YYYY, hh:mm");
-    let daythree= moment().add(3, "days").format("MM-DD-YYYY, hh:mm");
-    let dayfour = moment().add(4, "days").format("MM-DD-YYYY, hh:mm");
-    let dayfive = moment().add(5, "days").format("MM-DD-YYYY, hh:mm");
+    var dayOne= moment().add(1, "days").format("MM-DD-YYYY, hh:mm");
+    var dayTwo = moment().add(2, "days").format("MM-DD-YYYY, hh:mm");
+    var daythree= moment().add(3, "days").format("MM-DD-YYYY, hh:mm");
+    var dayfour = moment().add(4, "days").format("MM-DD-YYYY, hh:mm");
+    var dayfive = moment().add(5, "days").format("MM-DD-YYYY, hh:mm");
 
-    let city;
-    let cities;
+    var city;
+    var cities;
 
     function loadMostRecent () {
-        let lastSearch = localStorage.getItem("mostRecent");
+        var lastSearch = localStorage.getItem("mostRecent");
         if (lastSearch) {
             city = lastSearch;
             search();
@@ -25,7 +25,7 @@ $(document).ready(function() {
     loadMostRecent();
 
     function loadRecentCities () {
-        let recentCities = JSON.parse(localStorage.getItem("cities"));
+        var recentCities = JSON.parse(localStorage.getItem("cities"));
         if (recentCities) {
             cities = recentCities;
         } else {
@@ -59,20 +59,20 @@ $(document).ready(function() {
     }
 
     function search () {
-        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=858c53e89b222f3c6abb400167b0fee4";
-        let coords = [];
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=858c53e89b222f3c6abb400167b0fee4";
+        var coords = [];
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
             coords.push(response.coord.lat);
             coords.push(response.coord.lon);
-            let cityName = response.name;
-            let cityCond = response.weather[0].description.toUpperCase();
-            let cityTemp = response.main.temp;
-            let cityWind = response.wind.speed;
-            let cityHum = response.main.humidity;
-            let icon = response.weather[0].icon;
+            var cityName = response.name;
+            var cityCond = response.weather[0].description.toUpperCase();
+            var cityTemp = response.main.temp;
+            var cityWind = response.wind.speed;
+            var cityHum = response.main.humidity;
+            var icon = response.weather[0].icon;
             $("#icon").html(
                 `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`
             );
@@ -101,7 +101,7 @@ $(document).ready(function() {
             }).then(function (response) {
 
 
-                let uvI = response.current.uvi;
+                var uvI = response.current.uvi;
                 $("#uv-index").text("UV Index:"+ "" + uvI);
                 if (uvI >= 8) {
                     $("#uv-index").css("color", "red");
@@ -110,23 +110,23 @@ $(document).ready(function() {
                 } else {
                     $("#uv-index").css ("color", "green");
                 }
-                let day1temp = response.daily[1].temp.max;
-                let day2temp = response.daily[2].temp.max;
-                let day3temp = response.daily[3].temp.max;
-                let day4temp = response.daily[4].temp.max;
-                let day5temp = response.daily[5].temp.max;
+                var day1temp = response.daily[1].temp.max;
+                var day2temp = response.daily[2].temp.max;
+                var day3temp = response.daily[3].temp.max;
+                var day4temp = response.daily[4].temp.max;
+                var day5temp = response.daily[5].temp.max;
 
-                let day1hum = response.daily[1].humidity;
-                let day2hum = response.daily[2].humidity;
-                let day3hum = response.daily[3].humidity;
-                let day4hum = response.daily[4].humidity;
-                let day5hum = response.daily[5].humidity;
+                var day1hum = response.daily[1].humidity;
+                var day2hum = response.daily[2].humidity;
+                var day3hum = response.daily[3].humidity;
+                var day4hum = response.daily[4].humidity;
+                var day5hum = response.daily[5].humidity;
 
-                let icon1 = response.daily[1].weather[0].icon;
-                let icon2 = response.daily[2].weather[0].icon;
-                let icon3 = response.daily[3].weather[0].icon;
-                let icon4 = response.daily[4].weather[0].icon;
-                let icon5 = response.daily[5].weather[0].icon;
+                var icon1 = response.daily[1].weather[0].icon;
+                var icon2 = response.daily[2].weather[0].icon;
+                var icon3 = response.daily[3].weather[0].icon;
+                var icon4 = response.daily[4].weather[0].icon;
+                var icon5 = response.daily[5].weather[0].icon;
 
                 $("#tempOne").text("Temp(F):" + " " + day1temp.toFixed(1));
                 $("#tempTwo").text("Temp(F):" + " " + day2temp.toFixed(1));
@@ -171,7 +171,7 @@ $(document).ready(function() {
 
     $(document).on("click", "td", (e) => {
         e.preventDefault ();
-        let listedCity = $(e.target).text();
+        var listedCity = $(e.target).text();
         city =listedCity;
         search();
     });
